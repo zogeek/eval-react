@@ -1,6 +1,9 @@
 import "./card.css"
+import { useNavigate } from "react-router-dom"
 
     const Card = ({ recipe }) => {
+    const navigate = useNavigate()
+
     const VoirDetails = () => {
         navigate(`/list/${recipe.id}`)
     }
