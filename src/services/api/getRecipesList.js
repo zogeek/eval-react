@@ -3,6 +3,7 @@ async function fetchDataList() {
       const response = await axios.get('https://dummyjson.com/recipes?limit=0')
       const recipes = response.data.recipes
       recipes.forEach(recipe => {
+        const id = recipe.id
         const name = recipe.name
         const image = recipe.image
         const type = recipe.cuisine
@@ -11,6 +12,7 @@ async function fetchDataList() {
         const descriptionText = description.map(instructions => instructions).join(' ');
 
         const recipeData = {
+          id,
           name,
           image,
           type,
@@ -23,3 +25,5 @@ async function fetchDataList() {
       console.error('Error fetching data:', error)
     }
   }
+
+export default fetchDataList

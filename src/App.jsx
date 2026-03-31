@@ -3,37 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import axios from 'axios'
+import { fetchDataList } from './services/api/getRecipesList';
 
 function App() {
   const [count, setCount] = useState(0)
-  async function fetchData() {
-    try {
-      const response = await axios.get('https://dummyjson.com/recipes?limit=0')
-      const recipes = response.data.recipes
-      recipes.forEach(recipe => {
-        const name = recipe.name
-        const image = recipe.image
-        const type = recipe.cuisine
 
-        const description = recipe.instructions.slice(0, 2);
-        const descriptionText = description.map(instructions => instructions).join(' ');
-
-        const recipeData = {
-          name,
-          image,
-          type,
-          descriptionText
-        };
-        console.log(recipeData);        
-      });
-
-    } catch (error) {
-      console.error('Error fetching data:', error)
-    }
-  }
-
-  fetchData()
+  fetchDataList()
 
   return (
     <>
