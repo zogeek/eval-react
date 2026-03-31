@@ -1,7 +1,6 @@
 import "./list.css"
 import Card from "../Card/card"
 
-
 const List = ({ recipes = [] }) => {
     return (
         <div className="recipe-container">
@@ -12,11 +11,8 @@ const List = ({ recipes = [] }) => {
                 <div className="recipes-list">
                     {recipes.map((recipe) => (
                         <Card
-                            id={recipe.id}
-                            recipeTitle={recipe.title}
-                            recipeDescription={recipe.Description}
-                            recipeImage={recipe.image}
-                            recipeCategory={recipe.category}
+                            key={recipe.id}
+                            recipe={recipe}
                         />
                     ))}
                 </div>

@@ -1,6 +1,6 @@
 import "./card.css"
 
-    const Card = ({ recipeTitle, recipeDescription, recipeImage, recipeCategory }) => {
+    const Card = ({ recipe }) => {
     const VoirDetails = () => {
         navigate(`/list/${recipe.id}`)
     }
@@ -12,10 +12,10 @@ import "./card.css"
         return (
             <>
                 <div className="card">
-                    <h2>{recipeTitle}</h2>
-                    <img src={recipeImage} />
-                    <p>{recipeDescription}</p>
-                    <p>{recipeCategory}</p>
+                    <h2>{recipe.title}</h2>
+                    <img src={recipe.image} width={"100px"} />
+                    <p>{recipe.category}</p>
+                    <p>{recipe.description}</p>
                     <div className="card-button">
                         <button className="fav-button" onClick={AjtFavorite}>
                             Ajouter au favoris
