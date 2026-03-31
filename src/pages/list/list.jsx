@@ -23,6 +23,7 @@ export default function ListPage() {
         };
         fetchData();
     }, []);
+    console.log(tags);
 
    useEffect(() => {
         let filtered = AllData;
@@ -36,8 +37,15 @@ export default function ListPage() {
                 recipe.difficulty.toLowerCase() === difficulty
             );
         }
+
+        if (selectedTag) {
+            filtered = filtered.filter(recipe =>
+                recipe.tags.includes(selectedTag)
+            );
+        }
+
         setData(filtered);
-    }, [searchTerm, difficulty, AllData]);
+    }, [searchTerm, difficulty, AllData, selectedTag]);
 
 
     return (
@@ -58,7 +66,19 @@ export default function ListPage() {
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
-                
+                <label htmlFor="tags">Tags:</label>
+                <select
+                    id="tags"
+                    value={selectedTag}
+                    onChange={(e) => setSelectedTag(e.target.value)}
+                >
+                    <option value="">Tous les tags</option>
+                    {tags.map(tag => (
+                        <option key={tag} value={tag}>
+                            {tag}
+                        </option>
+                    ))}
+                </select>
             </div>
             <List recipes={data} />
         </>

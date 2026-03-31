@@ -73,7 +73,7 @@ async function GetRecipesbyTags(Tags) {
 async function getAllTags() {
   try {
     const response = await axios.get(`https://dummyjson.com/recipes/tags`)
-    return response.data.tags;
+    return response.data;
   } catch (error) {
     console.error('Error fetching data:', error)
     return []
