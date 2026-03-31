@@ -8,10 +8,10 @@ async function fetchDataList() {
         const id = recipe.id
         const name = recipe.name
         const image = recipe.image
-        const type = recipe.cuisine
+        const type = recipe.tags.slice(0).join(', ')
 
         const description = recipe.instructions.slice(0, 2);
-        const descriptionText = description.map(instructions => instructions).join(' ');
+        const descriptionText = description.map(instructions => instructions).join(', ');
 
         const recipeData = {
           id,
@@ -20,7 +20,7 @@ async function fetchDataList() {
           type,
           descriptionText
         };
-        console.log(recipeData);        
+        return recipeData;
       });
 
     } catch (error) {
