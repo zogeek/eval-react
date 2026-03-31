@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 async function fetchDataList() {
     try {
       const response = await axios.get('https://dummyjson.com/recipes?limit=0')

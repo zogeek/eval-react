@@ -1,6 +1,6 @@
 import "./favoris.css"
 import { useState, useEffect } from "react"
-import { getFavoris } from "../Storage/storage"
+import { getFavoris } from "../../services/api/storage"
 import Card from "../Card/card"
 
 const FavorisList = () => {
