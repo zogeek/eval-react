@@ -7,12 +7,14 @@ async function fetchRecipeData(id) {
 
       const recipeData = {
         id: recipe.id,
-        name: recipe.name,
+        title: recipe.name,
         image: recipe.image,
         type: recipe.cuisine,
-        descriptionText: recipe.instructions.slice(0, 2).join(' ')
+        descriptionText: recipe.instructions,
+        ingredients: recipe.ingredients,
+        instructions: recipe.instructions,
+        tags : recipe.tags
       };
-      console.log(recipeData);
       return recipeData;
     } catch (error) {
       console.error('Error fetching recipe data:', error)

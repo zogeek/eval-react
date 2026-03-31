@@ -1,24 +1,32 @@
 import "./detail.css"
 
-    const Detail = ({ recipeTitle, recipeDescription, recipeImage, recipeIngredient, recipeInstructions }) => {
+    const Detail = ({ recipe }) => {
         const AjtFavorite = () => {
         
+        }
+
+        if (!recipe) {
+            return (
+                <div className="detail-recipe">
+                    <p>Chargement...</p>
+                </div>
+            )
         }
         
         return (
             <>
                 <div className="detail-recipe">
-                    <h2>{recipeTitle}</h2>
-                    <img src={recipeImage} />
-                    <p>{recipeDescription}</p>
+                    <h2>{recipe.title}</h2>
+                    <img src={recipe.image} />
+                    <p>{recipe.description}</p>
                     <div className="card-info">
                         <div className="ingredient">
                             <strong>Ingrédients:</strong>
-                            <p>{recipe.ingredient}</p>
+                            <p>{(recipe.ingredients ?? []).join(', ')}</p>
                         </div>
                         <div className="instructions">
                             <strong>Instructions:</strong>
-                         <p>{recipe.instructions}</p>
+                         <p>{(recipe.instructions ?? []).join(' ')}</p>
                         </div>
                     </div>
                     <div className="card-button">
