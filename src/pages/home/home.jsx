@@ -10,10 +10,10 @@ export default function home() {
                 <h1>Bienvenue notre livre de recette</h1>
                 <div className="home-buttons">
                     <button onClick={() => navigate("/list")}>
-                        Liste de recette
+                        Liste des recettes
                     </button>
                     <button onClick={() => navigate("/favoris")}>
-                        <Favoris />
+                        Liste des Favoris
                     </button>
                 </div>
             </div>

@@ -19,14 +19,6 @@ import { useNavigate } from "react-router-dom"
         const Retour = () => {
             navigate(-1)
         }
-
-        if (!recipe) {
-            return (
-                <div className="detail-recipe">
-                    <p>Chargement...</p>
-                </div>
-            )
-        }
         
         return (
             <>

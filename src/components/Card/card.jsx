@@ -1,5 +1,6 @@
 import "./card.css"
 import { useNavigate } from "react-router-dom"
+import { saveFavoris } from "../../services/api/storage"
 
     const Card = ({ recipe }) => {
     const navigate = useNavigate()
@@ -9,7 +10,7 @@ import { useNavigate } from "react-router-dom"
     }
 
     const AjtFavorite = () => {
-        
+        saveFavoris(recipe);
     }
         
         return (
