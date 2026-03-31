@@ -50,23 +50,24 @@ export default function ListPage() {
 
     return (
         <>
-            <div className="search-bar">
-                <input type="text" placeholder="Rechercher une recette..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-                <button>Rechercher</button>
-            </div>
-            <div className="filters">
-                <label htmlFor="difficulty">Difficulty:</label>
-                <select
-                    id="difficulty"
-                    value={difficulty}
-                    onChange={(e) => setDifficulty(e.target.value)}
-                >
-                    <option value="">Tous les niveaux</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
-                <label htmlFor="tags">Tags:</label>
+            <div className="list-page">
+                <h1>Toutes les Recettes</h1>
+                <div className="search-bar">
+                    <input type="text" placeholder="Rechercher une recette..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                </div>
+                <div className="filters">
+                    <label htmlFor="difficulty">Difficulty:</label>
+                    <select
+                        id="difficulty"
+                        value={difficulty}
+                        onChange={(e) => setDifficulty(e.target.value)}
+                    >
+                        <option value="">Tous les niveaux</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <label htmlFor="tags">Tags:</label>
                 <select
                     id="tags"
                     value={selectedTag}
@@ -79,8 +80,9 @@ export default function ListPage() {
                         </option>
                     ))}
                 </select>
+                </div>
+                <List recipes={data} />
             </div>
-            <List recipes={data} />
         </>
     );
 }
