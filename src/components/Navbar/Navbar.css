@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: black 2px solid;
+    padding: 10px;
 }
 
 .link{
@@ -12,10 +14,17 @@
     width: 100%;
 }
 
-.navbar .navlink{
-    padding: 12px;
+.navlink{
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--text-primary);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navlink:hover{
+    color: var(--primary);
+    font-weight: bold;
 }

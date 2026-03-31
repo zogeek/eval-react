@@ -1,6 +1,7 @@
 import "./list.css"
 import Card from "../Card/card"
 
+
 const List = ({ recipes = [] }) => {
     return (
         <div className="recipe-container">
