@@ -1,5 +1,4 @@
 import './App.css'
-import { fetchDataList } from './services/api/getRecipesList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home/home.jsx';
 import Favoris from './pages/favoris/favoris.jsx';
@@ -9,8 +8,7 @@ import NavBar from './components/Navbar/Navbar.jsx';
 
 export default function App() {
 
-  fetchDataList()
-  
+
   return (
 
     <div className='app'>
