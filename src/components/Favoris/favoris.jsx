@@ -30,6 +30,4 @@ const FavorisList = () => {
     )
 }
 
-console.log(getFavorites());
-
 export default FavorisList;

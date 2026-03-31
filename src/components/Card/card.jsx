@@ -1,12 +1,16 @@
 import "./card.css"
+import { useNavigate } from "react-router-dom"
+import { saveFavoris } from "../../services/api/storage"
 
     const Card = ({ recipe }) => {
+    const navigate = useNavigate()
+
     const VoirDetails = () => {
         navigate(`/list/${recipe.id}`)
     }
 
     const AjtFavorite = () => {
-        
+        saveFavoris(recipe);
     }
         
         return (
