@@ -3,9 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import axios from 'axios'
 
 function App() {
   const [count, setCount] = useState(0)
+  async function fetchData() {
+    try {
+      const response = await axios.get('https://dummyjson.com/recipes')
+      console.log(response.data)
+    } catch (error) {
+      console.error('Error fetching data:', error)
+    }
+  }
+
+  fetchData()
 
   return (
     <>
