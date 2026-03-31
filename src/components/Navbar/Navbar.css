@@ -1,0 +1,19 @@
+.navbar{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary);
+}
+
+.navbar .link{
+    display: flex;
+}
+
+.navbar .navlink{
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+}
