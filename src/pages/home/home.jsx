@@ -1,8 +1,9 @@
 import "./home.css"
 import { useNavigate } from "react-router-dom";
+import  Favoris from "../../components/Favoris/favoris.jsx"
 
 export default function home() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     return (
         <>  
             <div className="home">
@@ -12,7 +13,7 @@ export default function home() {
                         Liste de recette
                     </button>
                     <button onClick={() => navigate("/favoris")}>
-                        Liste des favoris
+                        <Favoris />
                     </button>
                 </div>
             </div>

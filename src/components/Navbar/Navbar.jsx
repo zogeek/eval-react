@@ -6,7 +6,7 @@ export default function Navbar() {
         <div className="navbar">
             <div className="link">
                 <NavLink className="navlink" to="/">Home</NavLink>
-                <NavLink className="navlink" to="/list">Liste des tâches</NavLink>
+                <NavLink className="navlink" to="/list">Liste des Recettes</NavLink>
                 <NavLink className="navlink" to="/favoris">Favoris</NavLink>
             </div>
         </div>

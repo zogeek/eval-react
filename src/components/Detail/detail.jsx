@@ -1,14 +1,22 @@
 import "./detail.css"
+import { saveFavoris } from "../../services/api/storage"
 import { useNavigate } from "react-router-dom"
 
     const Detail = ({ recipe }) => {
         const navigate = useNavigate()
-
         const AjtFavorite = () => {
-        
+            saveFavoris(recipe);
         }
 
-        const handleRetour = () => {
+        if (!recipe) {
+            return (
+                <div className="detail-recipe">
+                    <p>Chargement...</p>
+                </div>
+            )
+        }
+
+        const Retour = () => {
             navigate(-1)
         }
 
@@ -45,7 +53,7 @@ import { useNavigate } from "react-router-dom"
                                 <button className="fav-button" onClick={AjtFavorite}>
                                     Ajouter au favoris
                                 </button>
-                                <button className="retour-button" onClick={handleRetour}>
+                                <button className="retour-button" onClick={Retour}>
                                     Retour a la Liste
                                 </button>
                             </div>
