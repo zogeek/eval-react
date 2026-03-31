@@ -1,13 +1,15 @@
 .navbar{
     width: 100%;
-    position: fixed;
     display: flex;
-    justify-content: space-between;
-    background-color: var(--primary);
+    justify-content: center;
+    align-items: center;
 }
 
-.navbar .link{
+.link{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 
 .navbar .navlink{
