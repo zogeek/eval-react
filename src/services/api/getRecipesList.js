@@ -11,7 +11,9 @@ async function fetchDataList() {
           title: recipe.name,
           image: recipe.image,
           category: recipe.tags.join(', '),
-          description: recipe.instructions.slice(0, 2).join(', ')
+          description: recipe.instructions.slice(0, 2).join(' '),
+          difficulty: recipe.difficulty,
+          tags: recipe.tags
         };
       });
       
