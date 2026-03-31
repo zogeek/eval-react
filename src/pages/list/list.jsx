@@ -12,7 +12,7 @@ export default function ListPage() {
             setData(recipes)
         }
         fetchData()
-    }, []);
+    }, []); 
 
     return (
         <>

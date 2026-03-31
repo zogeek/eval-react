@@ -29,5 +29,5 @@
 .navlink:hover{
     color: var(--primary);
     font-weight: bold;
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(236, 236, 236);;
 }
