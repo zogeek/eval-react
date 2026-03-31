@@ -1,26 +1,28 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Navbar from "./components/Navbar/Navbar"
-import Home from "./pages/home/home"
+import { BrowserRouter, Route, Routes } from 'react-router';
+import Home from './pages/home/home.jsx';
+import Favoris from './pages/favoris/favoris.jsx';
+import Detail from './pages/list/detail/detail.jsx';
+import Listes from './pages/list/list.jsx';
 
-function App() {
+
+export default function App() {
+
+
   return (
-    <>
-      <div>
+
+    <div className='app'>
+        
         <BrowserRouter>
-          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/list" element={<Layout />} >
-              <Route path="" element={<List />} />
-              <Route path=":id" element={<Details />} />
-            </Route>
+            <Route path="/liste" element={<Listes />} />
+            <Route path="/liste : id" element={<Detail />} />
             <Route path="/favoris" element={<Favoris />} />
+
           </Routes>
         </BrowserRouter>
-        </div>
-    </>
+    </div>
   )
 }
 
-export default App
